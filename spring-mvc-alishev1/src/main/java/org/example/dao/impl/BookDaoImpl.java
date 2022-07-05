@@ -72,7 +72,7 @@ public class BookDaoImpl implements BookDao {
 
     @Override
     public void create(Book book) {
-        String sql = "INSERT INTO book VALUES (?,?,?)";
+        String sql = "INSERT INTO book VALUES (?, ?, ?)";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setInt(1, ++COUNT);
             preparedStatement.setString(2, book.getTitle());
